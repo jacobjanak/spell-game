@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hex Wars</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://kit.fontawesome.com/1fae8ff10e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="app" v-cloak>
+        <div>
+            <div>User</div>
+            <div>Health: {{ player.health }}</div>
+            <div>Mana: {{ player.mana }}</div>
+        </div>
+
+        <div>
+            <div>Enemy</div>
+            <div>Health: {{ target.health }}</div>
+            <div>Mana: {{ target.mana }}</div>
+        </div>
+
+        <button
+            v-for="spell in spells"
+            :key="spell.id"
+            @click="castSpell(spell.id)"
+        >
+            {{ spell.name }}
+        </button>
+    </div>
+
+    <script src="https://unpkg.com/vue@3"></script>
+    <!-- <script src="https://unpkg.com/axios@1.5.1"></script> -->
+    <script src="./script.js"></script>
+</body>
+</html>
